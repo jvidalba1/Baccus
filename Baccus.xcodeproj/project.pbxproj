@@ -13,6 +13,7 @@
 		5C05F435186F832D00711835 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C05F433186F832D00711835 /* WebViewController.xib */; };
 		5C05F43718712D2400711835 /* zarate.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5C05F43618712D2400711835 /* zarate.gif */; };
 		5C05F43918712D2D00711835 /* comtesDeChampagne.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C05F43818712D2D00711835 /* comtesDeChampagne.jpg */; };
+		5C3D149618721906001E553B /* WineryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D149518721906001E553B /* WineryModel.m */; };
 		5C9C3544186D08FB002D03E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9C3543186D08FB002D03E2 /* Foundation.framework */; };
 		5C9C3546186D08FB002D03E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9C3545186D08FB002D03E2 /* CoreGraphics.framework */; };
 		5C9C3548186D08FC002D03E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9C3547186D08FC002D03E2 /* UIKit.framework */; };
@@ -48,6 +49,8 @@
 		5C05F433186F832D00711835 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		5C05F43618712D2400711835 /* zarate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zarate.gif; sourceTree = "<group>"; };
 		5C05F43818712D2D00711835 /* comtesDeChampagne.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = comtesDeChampagne.jpg; sourceTree = "<group>"; };
+		5C3D149418721906001E553B /* WineryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineryModel.h; sourceTree = "<group>"; };
+		5C3D149518721906001E553B /* WineryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineryModel.m; sourceTree = "<group>"; };
 		5C9C3540186D08FB002D03E2 /* Baccus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baccus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9C3543186D08FB002D03E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5C9C3545186D08FB002D03E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,6 +187,8 @@
 			children = (
 				5CB9EE60186E071C00E0572E /* WineModel.h */,
 				5CB9EE61186E071C00E0572E /* WineModel.m */,
+				5C3D149418721906001E553B /* WineryModel.h */,
+				5C3D149518721906001E553B /* WineryModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				5CB9EE6D186E2F4800E0572E /* WineViewController.m in Sources */,
 				5C9C3554186D08FC002D03E2 /* AppDelegate.m in Sources */,
 				5C9C3550186D08FC002D03E2 /* main.m in Sources */,
+				5C3D149618721906001E553B /* WineryModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
