@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WineryModel.h"
+
+#define RED_WINE_SECTION    0
+#define WHITE_WINE_SECTION  1
+#define OTHER_WINE_SECTION  2
 
 @interface WineryTableViewController : UITableViewController
+
+@property (strong, nonatomic) WineryModel *model;
+
+-(id) initWithModel:(WineryModel *) aModel style:(UITableViewStyle) aStyle;
 
 @end

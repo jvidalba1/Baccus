@@ -7,12 +7,22 @@
 //
 
 #import "WineryTableViewController.h"
+#import "WineViewController.h"
 
 @interface WineryTableViewController ()
 
 @end
 
 @implementation WineryTableViewController
+
+-(id) initWithModel:(WineryModel *) aModel style:(UITableViewStyle) aStyle{
+    
+    if (self = [super initWithStyle:aStyle]) {
+        _model = aModel;
+    }
+    
+    return self;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -44,24 +54,57 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (section == RED_WINE_SECTION)
+    {
+        return self.model.redWineCount;
+    }
+    else if (section == WHITE_WINE_SECTION)
+    {
+        return self.model.whiteWineCount;
+    }
+    else
+    {
+        return self.model.otherWineCount;
+    
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:CellIdentifier];
+    }
+    
+    // Averiguar de que modelo (vino) nos estan hablando
+    WineModel *wine = nil;
+    
+    if (indexPath.section == RED_WINE_SECTION)
+    {
+        wine = [self.model redWineAtIndex:indexPath.row];
+    }
+    else if (indexPath.section == WHITE_WINE_SECTION)
+    {
+        wine = [self.model whiteWineAtIndex:indexPath.row];
+    }
+    else
+    {
+        wine = [self.model otherWineAtIndex:indexPath.row];
+    }
+    
+    // Sincronizar celda (vista) y modelo (wine)
+    cell.imageView.image = wine.photo;
+    cell.textLabel.text = wine.name;
+    cell.detailTextLabel.text = wine.wineCompanyName;
     
     return cell;
 }
@@ -116,5 +159,34 @@
 }
 
  */
+
+#pragma mark - Table View Delegate
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // Suponemos que estamos en n navigation controller
+    
+    // Averiguamos de que vino se trata
+    WineModel *wine = nil;
+    
+    if (indexPath.section == RED_WINE_SECTION)
+    {
+        wine = [self.model redWineAtIndex:indexPath.row];
+    }
+    else if (indexPath.section == WHITE_WINE_SECTION)
+    {
+        wine = [self.model whiteWineAtIndex:indexPath.row];
+    }
+    else
+    {
+        wine = [self.model otherWineAtIndex:indexPath.row];
+    }
+    
+    // Creamos un controlador para dicho vino
+    WineViewController *wineVC = [[WineViewController alloc] initWithModel:wine];
+    
+    // Hacemos un push al navigation controller dentro del cual estamos
+    [self.navigationController pushViewController:wineVC animated:YES];
+    
+}
 
 @end
