@@ -13,9 +13,22 @@
 #define WHITE_WINE_SECTION  1
 #define OTHER_WINE_SECTION  2
 
+// El compilador ve q esto es una clase y confia q la declaremos mas adelante
+@class WineryTableViewController;
+
+// Protocolo para comunicar los dos MVC's
+
+@protocol WineryTableViewControllerDelegate <NSObject>
+
+-(void) wineryTableViewController:(WineryTableViewController *) wineryVC
+                   didSelecteWine:(WineModel *) aWine;
+
+@end
+
 @interface WineryTableViewController : UITableViewController
 
 @property (strong, nonatomic) WineryModel *model;
+@property (nonatomic, weak) id<WineryTableViewControllerDelegate> delegate;
 
 -(id) initWithModel:(WineryModel *) aModel style:(UITableViewStyle) aStyle;
 

@@ -209,11 +209,18 @@
         wine = [self.model otherWineAtIndex:indexPath.row];
     }
     
+    // Con esto le mandamos el mensaje al delegado y el se encarga del resto
+    [self.delegate wineryTableViewController:self
+                              didSelecteWine:wine];
+    
+    
+    
+    
     // Creamos un controlador para dicho vino
-    WineViewController *wineVC = [[WineViewController alloc] initWithModel:wine];
+    //WineViewController *wineVC = [[WineViewController alloc] initWithModel:wine];
     
     // Hacemos un push al navigation controller dentro del cual estamos
-    [self.navigationController pushViewController:wineVC animated:YES];
+    //[self.navigationController pushViewController:wineVC animated:YES];
     
 }
 
