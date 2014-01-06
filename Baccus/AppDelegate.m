@@ -10,6 +10,8 @@
 #import "WineModel.h"
 #import "WineViewController.h"
 #import "WebViewController.h"
+#import "WineryModel.h"
+#import "WineryTableViewController.h"
 
 @implementation AppDelegate
 
@@ -19,6 +21,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Creamos los modelos
+    /*
     WineModel *tintorro = [WineModel wineWithName:@"Bembibre"
                                   wineCompanyName:@"Dominio de Tares"
                                              type:@"tinto"
@@ -48,25 +51,33 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                              notes:@"Este vino muestra toda la complejidad y la elegancia de la variedad Mencia. En fase visual luce un color rojo picota muy cubierto con tonalidades..."
                                             rating:4
                                              photo:[UIImage imageNamed:@"comtesDeChampagne.jpg"]];
-    // Creamos los controladores
+     */
     
-    WineViewController *tintoVC = [[WineViewController alloc] initWithModel:tintorro];
-    WineViewController *blancoVC = [[WineViewController alloc] initWithModel:albarinno];
-    WineViewController *otroVC = [[WineViewController alloc] initWithModel:champagne];
+    // Creamos los modelos
+    WineryModel *winery = [[WineryModel alloc] init];
+    
+    // Creamos los controladores
+    WineryTableViewController *wineryVC = [[WineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
+    
+    //WineViewController *tintoVC = [[WineViewController alloc] initWithModel:tintorro];
+    //WineViewController *blancoVC = [[WineViewController alloc] initWithModel:albarinno];
+    //WineViewController *otroVC = [[WineViewController alloc] initWithModel:champagne];
     //WebViewController *webVC = [[WebViewController alloc] initWithModel:tintorro];
     
     // Creamos los navigation
-    UINavigationController *tintoNav = [[UINavigationController alloc] initWithRootViewController:tintoVC];
-    UINavigationController *blancoNav = [[UINavigationController alloc] initWithRootViewController:blancoVC];
-    UINavigationController *otroNav = [[UINavigationController alloc] initWithRootViewController:otroVC];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    
+    //UINavigationController *tintoNav = [[UINavigationController alloc] initWithRootViewController:tintoVC];
+    //UINavigationController *blancoNav = [[UINavigationController alloc] initWithRootViewController:blancoVC];
+    //UINavigationController *otroNav = [[UINavigationController alloc] initWithRootViewController:otroVC];
     
     // Creamos el combinador
     
     
     // UITabViewController
     
-    UITabBarController *tabVC = [[UITabBarController alloc] init];
-    tabVC.viewControllers = @[tintoNav, blancoNav, otroNav];
+    //UITabBarController *tabVC = [[UITabBarController alloc] init];
+    //tabVC.viewControllers = @[tintoNav, blancoNav, otroNav];
     
     //UITabBarController *tabVC = [[UITabBarController alloc] init];
     //tabVC.viewControllers = @[wineVC, webVC];
@@ -75,7 +86,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     //UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineVC];
     
     // Lo asignamos como controlador raiz
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
+    //self.window.rootViewController = tabVC;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor greenColor];

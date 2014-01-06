@@ -19,9 +19,19 @@
     
     if (self = [super initWithStyle:aStyle]) {
         _model = aModel;
+        self.title = @"Baccus";
     }
     
     return self;
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0.5
+                                                                        green:0
+                                                                         blue:0.13
+                                                                        alpha:1];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -51,6 +61,24 @@
 }
 
 #pragma mark - Table view data source
+
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == RED_WINE_SECTION)
+    {
+        return @"Red wines";
+    }
+    else if (section == WHITE_WINE_SECTION)
+    {
+        return @"White wines";
+    }
+    else
+    {
+        return @"Other wines";
+        
+    }
+    
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
