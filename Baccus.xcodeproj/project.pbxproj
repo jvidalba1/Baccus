@@ -29,6 +29,7 @@
 		5CB9EE62186E071C00E0572E /* WineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE61186E071C00E0572E /* WineModel.m */; };
 		5CB9EE6D186E2F4800E0572E /* WineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CB9EE6B186E2F4800E0572E /* WineViewController.m */; };
 		5CB9EE6E186E2F4800E0572E /* WineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB9EE6C186E2F4800E0572E /* WineViewController.xib */; };
+		5CC23940187A7748009EA15F /* WineryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2393F187A7748009EA15F /* WineryTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		5CB9EE6A186E2F4800E0572E /* WineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineViewController.h; sourceTree = "<group>"; };
 		5CB9EE6B186E2F4800E0572E /* WineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineViewController.m; sourceTree = "<group>"; };
 		5CB9EE6C186E2F4800E0572E /* WineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WineViewController.xib; sourceTree = "<group>"; };
+		5CC2393E187A7748009EA15F /* WineryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WineryTableViewController.h; sourceTree = "<group>"; };
+		5CC2393F187A7748009EA15F /* WineryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WineryTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				5C05F431186F832D00711835 /* WebViewController.h */,
 				5C05F432186F832D00711835 /* WebViewController.m */,
 				5C05F433186F832D00711835 /* WebViewController.xib */,
+				5CC2393E187A7748009EA15F /* WineryTableViewController.h */,
+				5CC2393F187A7748009EA15F /* WineryTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				5C05F434186F832D00711835 /* WebViewController.m in Sources */,
 				5CB9EE6D186E2F4800E0572E /* WineViewController.m in Sources */,
 				5C9C3554186D08FC002D03E2 /* AppDelegate.m in Sources */,
+				5CC23940187A7748009EA15F /* WineryTableViewController.m in Sources */,
 				5C9C3550186D08FC002D03E2 /* main.m in Sources */,
 				5C3D149618721906001E553B /* WineryModel.m in Sources */,
 			);
