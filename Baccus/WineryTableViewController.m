@@ -214,14 +214,19 @@
                               didSelecteWine:wine];
     
     
-    
-    
     // Creamos un controlador para dicho vino
     //WineViewController *wineVC = [[WineViewController alloc] initWithModel:wine];
     
     // Hacemos un push al navigation controller dentro del cual estamos
     //[self.navigationController pushViewController:wineVC animated:YES];
     
+    
+    // Notificacion
+    NSNotification *n = [NSNotification notificationWithName:NEW_WINE_NOTIFICATION_NAME
+                                                      object:self
+                                                    userInfo:@{WINE_KEY: wine}];
+    
+    [[NSNotificationCenter defaultCenter]postNotification:n];
 }
 
 @end

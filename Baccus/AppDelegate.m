@@ -99,7 +99,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     
     // Asignamos delegados : split
     splitVC.delegate = wineVC;
-
+    wineryVC.delegate = wineVC;
     
     // Lo asignamos como controlador raiz
     self.window.rootViewController = splitVC;

@@ -12,11 +12,13 @@
 #define RED_WINE_SECTION    0
 #define WHITE_WINE_SECTION  1
 #define OTHER_WINE_SECTION  2
+#define NEW_WINE_NOTIFICATION_NAME @"newWine"
+#define WINE_KEY @"wine"
+
+// Protocolo para comunicar los dos MVC's
 
 // El compilador ve q esto es una clase y confia q la declaremos mas adelante
 @class WineryTableViewController;
-
-// Protocolo para comunicar los dos MVC's
 
 @protocol WineryTableViewControllerDelegate <NSObject>
 

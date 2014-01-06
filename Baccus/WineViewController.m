@@ -8,6 +8,7 @@
 
 #import "WineViewController.h"
 #import "WebViewController.h"
+#import "WineryTableViewController.h"
 
 @interface WineViewController ()
 
@@ -121,8 +122,17 @@
     self.navigationItem.rightBarButtonItem = nil;
 }
 
+#pragma mark - WineryTableViewControllerDelegate
 
-
+// Metodo para el delegado
+-(void) wineryTableViewController:(WineryTableViewController *)wineryVC
+                   didSelecteWine:(WineModel *) aWine {
+    
+    self.model = aWine;
+    self.title = aWine.name;
+    [self syncModelWithView];
+    
+}
 
 
 

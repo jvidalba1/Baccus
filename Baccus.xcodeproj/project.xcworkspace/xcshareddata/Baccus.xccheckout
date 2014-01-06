@@ -5,11 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>9DFE5870-54E2-43B5-A300-E628D7E9DD98</string>
+	<string>4DC1B559-9DAA-4D33-BBA3-745DD36F0063</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Baccus</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>8871EE0E-37F7-4C09-9B9D-A2F7A6334B1F</key>
+		<string>https://github.com/jvidalba1/Baccus.git</string>
 		<key>F6546D31-03C4-48F2-A8AB-C145F39005EC</key>
 		<string>https://github.com/jvidalba1/iOSCourse.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>Projects/Baccus/Baccus.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>8871EE0E-37F7-4C09-9B9D-A2F7A6334B1F</key>
+		<string>../..</string>
 		<key>F6546D31-03C4-48F2-A8AB-C145F39005EC</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/jvidalba1/iOSCourse.git</string>
+	<string>https://github.com/jvidalba1/Baccus.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>F6546D31-03C4-48F2-A8AB-C145F39005EC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8871EE0E-37F7-4C09-9B9D-A2F7A6334B1F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Baccus</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
