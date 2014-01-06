@@ -59,20 +59,29 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     // Creamos los controladores
     WineryTableViewController *wineryVC = [[WineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
     
+    WineViewController *wineVC = [[WineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
+    
     //WineViewController *tintoVC = [[WineViewController alloc] initWithModel:tintorro];
     //WineViewController *blancoVC = [[WineViewController alloc] initWithModel:albarinno];
     //WineViewController *otroVC = [[WineViewController alloc] initWithModel:champagne];
     //WebViewController *webVC = [[WebViewController alloc] initWithModel:tintorro];
     
     // Creamos los navigation
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    UINavigationController *wineryNav = [[UINavigationController alloc] initWithRootViewController:wineryVC];
+    
+    UINavigationController *wineNav = [[UINavigationController alloc] initWithRootViewController:wineVC];
     
     //UINavigationController *tintoNav = [[UINavigationController alloc] initWithRootViewController:tintoVC];
     //UINavigationController *blancoNav = [[UINavigationController alloc] initWithRootViewController:blancoVC];
     //UINavigationController *otroNav = [[UINavigationController alloc] initWithRootViewController:otroVC];
     
-    // Creamos el combinador
+    /*
+        Creamos el combinador
+    */
     
+    // SplitView
+    UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+    splitVC.viewControllers = @[wineryNav, wineNav];
     
     // UITabViewController
     
@@ -82,11 +91,20 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     //UITabBarController *tabVC = [[UITabBarController alloc] init];
     //tabVC.viewControllers = @[wineVC, webVC];
     
+    
     //UINavigationController
+    
     //UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:wineVC];
     
+    
+    // Asignamos delegados : split
+    splitVC.delegate = wineVC;
+
+    
     // Lo asignamos como controlador raiz
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = splitVC;
+    
+    //self.window.rootViewController = navVC;
     //self.window.rootViewController = tabVC;
     
     // Override point for customization after application launch.
