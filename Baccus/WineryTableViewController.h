@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "WineryModel.h"
+#import "WineModel.h"
 
 #define RED_WINE_SECTION    0
 #define WHITE_WINE_SECTION  1
 #define OTHER_WINE_SECTION  2
-#define NEW_WINE_NOTIFICATION_NAME @"newWine"
+
+#define NEW_WINE_NOTIFICATION_NAME @"newWineSelected"
 #define WINE_KEY @"wine"
+
+#define SECTION_KEY @"section"
+#define ROW_KEY @"row"
+#define LAST_WINE_KEY @"lastWine"
 
 // Protocolo para comunicar los dos MVC's
 
@@ -32,6 +38,9 @@
 @property (strong, nonatomic) WineryModel *model;
 @property (nonatomic, weak) id<WineryTableViewControllerDelegate> delegate;
 
--(id) initWithModel:(WineryModel *) aModel style:(UITableViewStyle) aStyle;
+-(id) initWithModel:(WineryModel *) aModel
+              style:(UITableViewStyle) aStyle;
+
+- (WineModel *) lastSelectedWine;
 
 @end
