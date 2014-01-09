@@ -10,29 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Baccus/WineryTableViewController.h"
-            timestampString = "410730067.036956"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "delegate"
-            landmarkType = "19">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Baccus/WineryTableViewController.h"
-            timestampString = "410730067.036956"
+            timestampString = "410934721.418992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-initWithModel:style:"
-            landmarkType = "4">
+            endingLineNumber = "35">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Baccus/WineryTableViewController.h"
-            timestampString = "410730067.036956"
+            timestampString = "410934721.418992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "@interface WineryTableViewController"
             landmarkType = "2">
          </BreakpointContent>
@@ -58,12 +40,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Baccus/WineryTableViewController.h"
-            timestampString = "410730067.036956"
+            timestampString = "410934721.418992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "@interface WineryTableViewController"
+            landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Baccus/WineryTableViewController.h"
+            timestampString = "410934721.418992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "@protocol WineryTableViewControllerDelegate"
             landmarkType = "2">
          </BreakpointContent>
       </BreakpointProxy>
@@ -167,11 +165,11 @@
                   symbolName = "-[WineryTableViewController model]"
                   moduleName = "Baccus"
                   urlString = "file://localhost/Users/jvidalba/Desktop/courses/iOSCourse/Projects/Baccus/Baccus/WineryTableViewController.h"
-                  timestampString = "410727339.259643"
+                  timestampString = "410934732.820602"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
                   offsetFromSymbolStart = "24">
                </Location>
                <Location
@@ -181,14 +179,30 @@
                   symbolName = "-[WineryTableViewController setModel:]"
                   moduleName = "Baccus"
                   urlString = "file://localhost/Users/jvidalba/Desktop/courses/iOSCourse/Projects/Baccus/Baccus/WineryTableViewController.h"
-                  timestampString = "410727339.259896"
+                  timestampString = "410934732.820972"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
                   offsetFromSymbolStart = "31">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Baccus/WineryTableViewController.m"
+            timestampString = "410934721.418992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

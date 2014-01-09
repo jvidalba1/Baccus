@@ -54,12 +54,12 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
      */
     
     // Creamos los modelos
-    WineryModel *winery = [[WineryModel alloc] init];
+    WineryModel *model = [[WineryModel alloc] init];
     
     // Creamos los controladores
-    WineryTableViewController *wineryVC = [[WineryTableViewController alloc] initWithModel:winery style:UITableViewStylePlain];
+    WineryTableViewController *wineryVC = [[WineryTableViewController alloc] initWithModel:model style:UITableViewStylePlain];
     
-    WineViewController *wineVC = [[WineViewController alloc] initWithModel:[winery redWineAtIndex:0]];
+    WineViewController *wineVC = [[WineViewController alloc] initWithModel:[wineryVC lastSelectedWine]];
     
     //WineViewController *tintoVC = [[WineViewController alloc] initWithModel:tintorro];
     //WineViewController *blancoVC = [[WineViewController alloc] initWithModel:albarinno];
