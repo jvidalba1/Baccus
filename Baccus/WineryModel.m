@@ -10,9 +10,9 @@
 
 @interface WineryModel ()
 
-@property (strong, nonatomic) NSArray *redWines;
-@property (strong, nonatomic) NSArray *whiteWines;
-@property (strong, nonatomic) NSArray *otherWines;
+@property (strong, nonatomic) NSMutableArray *redWines;
+@property (strong, nonatomic) NSMutableArray *whiteWines;
+@property (strong, nonatomic) NSMutableArray *otherWines;
 
 @end
 
@@ -38,43 +38,58 @@
 -(id) init{
     if (self = [super init]) {
         
-        // Creamos los modelos
-        WineModel *tintorro = [WineModel wineWithName:@"Bembibre"
-                                      wineCompanyName:@"Dominio de Tares"
-                                                 type:@"tinto"
-                                               origin:@"El Bierzo"
-                                               grapes:@[@"Mencia"]
-                                       wineCompanyWeb:[NSURL URLWithString:@"http://www.google.com.co"]
-                                                notes:@"Este vino muestra toda la complejidad y la elegancia de la variedad Mencia. En fase visual luce un color rojo picota muy cubierto con tonalidades..."
-                                               rating:5
-                                                photo:[UIImage imageNamed:@"bembibre.jpg"]];
+        // Descargar los datos a partir de la url q le pasemos al request
+        NSURLRequest *request   = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://baccusapp.herokuapp.com/wines"]];
+        NSURLResponse *response = [[NSURLResponse alloc]init];
+        NSError *error;
+        NSData *data            = [NSURLConnection sendSynchronousRequest:request
+                                                        returningResponse:&response
+                                                                    error:&error];
         
-        WineModel *albarinno = [WineModel wineWithName:@"Zarate"
-                                       wineCompanyName:@"Zarate"
-                                                  type:@"white"
-                                                origin:@"Rias bajas"
-                                                grapes:@[@"Alberibo"]
-                                        wineCompanyWeb:[NSURL URLWithString:@"http://www.google.com.co"]
-                                                 notes:@"Este vino muestra toda la complejidad y la elegancia de la variedad Mencia. En fase visual luce un color rojo picota muy cubierto con tonalidades..."
-                                                rating:3
-                                                 photo:[UIImage imageNamed:@"zarate.gif"]];
-        
-        WineModel *champagne = [WineModel wineWithName:@"Contes de champagne"
-                                       wineCompanyName:@"Nombre de champagne"
-                                                  type:@"other"
-                                                origin:@"Francia"
-                                                grapes:@[@"Chamber light"]
-                                        wineCompanyWeb:[NSURL URLWithString:@"http://www.google.com.co"]
-                                                 notes:@"Este vino muestra toda la complejidad y la elegancia de la variedad Mencia. En fase visual luce un color rojo picota muy cubierto con tonalidades..."
-                                                rating:4
-                                                 photo:[UIImage imageNamed:@"comtesDeChampagne.jpg"]];
-        
-        self.redWines = @[tintorro];
-        self.whiteWines = @[albarinno];
-        self.otherWines = @[champagne];
+        if (data != nil) {
+            NSArray *JSONObjects = [NSJSONSerialization JSONObjectWithData:data
+                                                                  options:kNilOptions
+                                                                    error:&error];
+            
+            if (JSONObjects != nil) {
+                for (NSDictionary *dict in JSONObjects) {
+                    WineModel *wine = [[WineModel alloc]initWithDictionary:dict];
+                    
+                    // Añadimos al tipo adecuado
+                    if ([wine.type isEqualToString:RED_WINE_KEY]) {
+                        
+                        if (!self.redWines) {
+                            self.redWines = [NSMutableArray arrayWithObject:wine];
+                        }else{
+                            [self.redWines addObject:wine];
+                        }
+                    }else if ([wine.type isEqualToString:WHITE_WINE_KEY]){
+                        if (!self.whiteWines) {
+                            self.whiteWines = [NSMutableArray arrayWithObject:wine];
+                        }else{
+                            [self.whiteWines addObject:wine];
+                        }
+                    }else{
+                        if (!self.otherWines) {
+                            self.otherWines = [NSMutableArray arrayWithObject:wine];
+                        }else{
+                            [self.otherWines addObject:wine];
+                        }
+                    }
+                }
+            }else{
+                // Se ha producido un error al parsear el JSON
+                NSLog(@"Error al parsear JSON: %@", error.localizedDescription);
+            }
+        }else{
+            // Error al descargar los datos del servidor
+            NSLog(@"Error al descargar los datos del servidor: %@",error.localizedDescription);
+        }
     }
     return self;
 }
+
+#pragma mark - Other
 
 -(WineModel *) redWineAtIndex:(int) index{
     return [self.redWines objectAtIndex:index];
